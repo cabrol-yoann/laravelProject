@@ -13,7 +13,7 @@ class CreateSaucesTable extends Migration
      */
     public function up()
     {
-        Schema::create('Sauces', function (Blueprint $table) {
+        Schema::create('sauces', function (Blueprint $table) {
             $table->Integer('SauceId');                         //Id de la sauce
             $table->String('UserId')                           //Id de l'utilisateur qui a créé la sauce
             ->foreign('UserId')
@@ -39,6 +39,6 @@ class CreateSaucesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Sauces');
+        Schema::dropIfExists('sauces');
     }
 }

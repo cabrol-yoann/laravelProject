@@ -20,3 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+use App\Http\Controllers\SauceController;
+Route::resource('shop', SauceController::class);
+
+Route::get('/add', 'App\Http\Controllers\SauceController@addData')->name('session.add');
+Route::get('/show', 'App\Http\Controllers\SauceController@showData')->name('session.show');
+Route::get('/delete', 'App\Http\Controllers\SauceController@deleteData')->name('session.delete');
